@@ -23,27 +23,27 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        YouDaoApplication.init(this, "466d4e9deb09a865");
-
-        //OCR识别
-        OCRParameters tps = new OCRParameters.Builder()
-                .source("youdaoocr").timeout(100000)
-                .type("10011").lanType("ja ").build();
-        String base64 = ImageUtil.loadAsBase64("a.png");
-        ImageOCRecognizer.getInstance(tps).recognize(base64,
-                new OCRListener() {
-
-                    @Override
-                    public void onResult(OCRResult result,
-                                         String input) {
-                        //识别成功
-                    }
-
-                    @Override
-                    public void onError(OcrErrorCode error) {
-                        //识别失败
-                    }
-                });
+//        YouDaoApplication.init(this, "466d4e9deb09a865");
+//
+//        //OCR识别
+//        OCRParameters tps = new OCRParameters.Builder()
+//                .source("youdaoocr").timeout(100000)
+//                .type("10011").lanType("ja ").build();
+//        String base64 = ImageUtil.loadAsBase64("a.png");
+//        ImageOCRecognizer.getInstance(tps).recognize(base64,
+//                new OCRListener() {
+//
+//                    @Override
+//                    public void onResult(OCRResult result,
+//                                         String input) {
+//                        //识别成功
+//                    }
+//
+//                    @Override
+//                    public void onError(OcrErrorCode error) {
+//                        //识别失败
+//                    }
+//                });
 
 
         super.onCreate(savedInstanceState);
