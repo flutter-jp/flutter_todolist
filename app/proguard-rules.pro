@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-ignorewarnings
+-libraryjars libs/ YoudaoBase.jar
+-libraryjars libs/ YoudaoLatexRecognize.jar
+-keep class com.youdao.sdk.ydtranslate.** { ;}
+-keep class com.youdao.yd_table_recognize.* { *;}
