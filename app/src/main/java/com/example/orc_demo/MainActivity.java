@@ -1,57 +1,84 @@
 package com.example.orc_demo;
 
-import android.os.Build;
-import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 
-import com.example.orc_demo.util.ImageUtil;
-import com.google.android.material.tabs.TabLayout;
+import com.example.orc_demo.adapter.ViewPagerAdapter;
+import com.example.orc_demo.base.BaseActivity;
+import com.example.orc_demo.ui.main.CameraFragment;
+import com.example.orc_demo.ui.main.HomeFragment;
+import com.example.orc_demo.ui.main.SettingFragment;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
-import androidx.annotation.RequiresApi;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.example.orc_demo.ui.main.SectionsPagerAdapter;
-import com.youdao.ocr.online.ImageOCRecognizer;
-import com.youdao.ocr.online.OCRListener;
-import com.youdao.ocr.online.OCRParameters;
-import com.youdao.ocr.online.OCRResult;
-import com.youdao.ocr.online.OcrErrorCode;
-import com.youdao.sdk.app.YouDaoApplication;
+public class MainActivity extends BaseActivity {
 
-public class MainActivity extends AppCompatActivity {
+    private BottomBar mBottomBar;
+    private ViewPager mVpContent;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-//        YouDaoApplication.init(this, "466d4e9deb09a865");
-//
-//        //OCR识别
-//        OCRParameters tps = new OCRParameters.Builder()
-//                .source("youdaoocr").timeout(100000)
-//                .type("10011").lanType("ja ").build();
-//        String base64 = ImageUtil.loadAsBase64("a.png");
-//        ImageOCRecognizer.getInstance(tps).recognize(base64,
-//                new OCRListener() {
-//
-//                    @Override
-//                    public void onResult(OCRResult result,
-//                                         String input) {
-//                        //识别成功
-//                    }
-//
-//                    @Override
-//                    public void onError(OcrErrorCode error) {
-//                        //识别失败
-//                    }
-//                });
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
+    @Override
+    public void initViews() {
+        mBottomBar = findViewById(R.id.bottomBar);
+        mVpContent = findViewById(R.id.vp_main_content);
+    }
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
+    @Override
+    public void initData() {
+        List<Fragment> mFragmentList = new ArrayList<>();
+        mFragmentList.add(new HomeFragment());
+        mFragmentList.add(new CameraFragment());
+        mFragmentList.add(new SettingFragment());
+        ViewPagerAdapter mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mFragmentList);
+        mVpContent.setAdapter(mViewPagerAdapter);
+        mVpContent.setOffscreenPageLimit(2);
+    }
+
+    @Override
+    public void initListener() {
+        mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                switch (tabId) {
+                    case R.id.tab_home:
+                        mVpContent.setCurrentItem(0);
+                        break;
+                    case R.id.tab_camera:
+                        mVpContent.setCurrentItem(1);
+                        break;
+                    case R.id.tab_setting:
+                        mVpContent.setCurrentItem(2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+        mVpContent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                mBottomBar.selectTabAtPosition(position, true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
     }
 }

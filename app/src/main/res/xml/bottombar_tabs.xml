@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_home_white_24dp"
+        title="Home" />
+    <tab
+        id="@+id/tab_camera"
+        icon="@drawable/ic_camera_alt_white_24dp"
+        title="Camera" />
+    <tab
+        id="@+id/tab_setting"
+        icon="@drawable/ic_settings_white_24dp"
+        title="Setting" />
+
+</tabs>
