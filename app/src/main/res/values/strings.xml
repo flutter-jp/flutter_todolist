@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">ORC智能识别</string>
-    <string name="tab_text_1">主页</string>
-    <string name="tab_text_2">相机</string>
-    <string name="tab_text_3">设置</string>
-</resources>
