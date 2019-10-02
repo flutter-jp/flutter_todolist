@@ -7,6 +7,8 @@ A Flutter app based on the design of the To Do App, created by *Rudi Hartono*, s
 ```shell
 - Clone the repo
 - Install the dependicies
+- you need register your firebase apps and put the google-service.json to android/app/
+- input content in key.propertyies
 - Run it
 ```
 
