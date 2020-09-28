@@ -8,6 +8,8 @@
 .buildlog/
 .history
 .svn/
+Flutter.podspec
+.last_build_id
 
 # IntelliJ related
 *.iml
