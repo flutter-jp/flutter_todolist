@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "57214902731",
+    "firebase_url": "https://todo-list-with-xiaomo.firebaseio.com",
+    "project_id": "todo-list-with-xiaomo",
+    "storage_bucket": "todo-list-with-xiaomo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57214902731:android:2cf209967f29084808564e",
+        "android_client_info": {
+          "package_name": "com.interestinate.flutter_todolist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57214902731-pggd3vqduj7544u42bge8k5ungsqdlsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF40Ye2KZ8BsbWlUDq6mtHWfltI1M_nfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57214902731-pggd3vqduj7544u42bge8k5ungsqdlsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

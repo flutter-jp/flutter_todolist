@@ -4,7 +4,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.2.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -19,7 +19,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.7.3
 
 flutter_icons:
-  android: "launcher_icon" 
+  android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
 
@@ -27,8 +27,8 @@ flutter:
   uses-material-design: true
 
   assets:
-   - assets/
-   - assets/images/
+    - assets/
+    - assets/images/
 
   fonts:
     - family: rubik
